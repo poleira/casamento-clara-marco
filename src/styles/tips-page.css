@@ -1,0 +1,264 @@
+/* ============================================================
+   TIPS PAGE — Estilos compartilhados para páginas de dicas
+   ============================================================ */
+
+.tips-page {
+  background-color: var(--color-cream);
+  min-height: 100svh;
+  animation: page-fade-in 0.8s ease both;
+}
+
+/* ── NAVEGAÇÃO TOPO ─────────────────────────────────────── */
+
+.tips-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) clamp(1.5rem, 6vw, 3rem);
+  border-bottom: 1px solid rgba(74, 92, 40, 0.15);
+  background-color: var(--color-cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tips-nav__back {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-green-forest);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: opacity 0.2s;
+}
+
+.tips-nav__back:hover {
+  opacity: 0.65;
+}
+
+.tips-nav__monogram {
+  width: 36px;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* ── HERO DA PÁGINA ─────────────────────────────────────── */
+
+.tips-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 6vw, 3rem);
+  overflow: hidden;
+  text-align: center;
+}
+
+.tips-hero__deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.tips-hero__deco--tl {
+  width: clamp(100px, 16vw, 180px);
+  top: -8px;
+  left: -8px;
+}
+
+.tips-hero__deco--tr {
+  width: clamp(90px, 14vw, 160px);
+  top: -8px;
+  right: -8px;
+  transform: scaleX(-1);
+}
+
+.tips-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+.tips-hero__script {
+  font-family: var(--font-script);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  color: var(--color-gold);
+  margin: 0;
+  line-height: 1;
+}
+
+.tips-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: var(--font-medium);
+  color: var(--color-green-forest);
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.tips-hero__divider {
+  width: clamp(120px, 30vw, 220px);
+  height: auto;
+  opacity: 0.8;
+  margin: var(--space-1) 0;
+}
+
+.tips-hero__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+}
+
+/* ── SEÇÃO DE CONTEÚDO ──────────────────────────────────── */
+
+.tips-content {
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 6vw, 3rem) clamp(4rem, 10vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ── CARDS ──────────────────────────────────────────────── */
+
+.tip-card {
+  width: min(560px, 90vw);
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-text-secondary);
+  outline: 1px solid var(--color-text-secondary);
+  outline-offset: -7px;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tip-card__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: 0;
+}
+
+.tip-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: var(--font-medium);
+  color: var(--color-green-forest);
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+}
+
+.tip-card__body {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.4vw, 0.9rem);
+  line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.tip-card__divider {
+  width: 40%;
+  height: 1px;
+  background-color: var(--color-text-muted);
+  opacity: 0.45;
+  margin: var(--space-1) 0;
+}
+
+.tip-card__link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-green-forest);
+  text-decoration: none;
+  border: 1.5px solid var(--color-green-forest);
+  padding: 0.5rem 1.5rem;
+  margin-top: var(--space-2);
+  align-self: flex-start;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tip-card__link:hover {
+  background: var(--color-green-forest);
+  color: var(--color-cream);
+}
+
+/* ── AVISO EM BREVE ─────────────────────────────────────── */
+
+.tips-coming-soon {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  border: 1px dashed var(--color-text-muted);
+  width: min(560px, 90vw);
+}
+
+/* ── LISTA DE ITENS ─────────────────────────────────────── */
+
+.tip-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+}
+
+.tip-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-gold);
+}
+
+.tip-list__item-title {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.4vw, 0.9rem);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-green-forest);
+}
+
+.tip-list__item-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.3vw, 0.84rem);
+  line-height: var(--leading-snug);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 480px) {
+  .tips-hero {
+    padding: clamp(2.5rem, 7vw, 4rem) 1.25rem;
+  }
+
+  .tips-content {
+    padding: 1.5rem 1.25rem 3.5rem;
+  }
+
+  .tip-card {
+    outline-offset: -5px;
+    padding: 1.75rem 1.25rem;
+  }
+}

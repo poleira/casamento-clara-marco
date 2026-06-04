@@ -1,0 +1,67 @@
+<div class="landing-scene">
+
+  <!-- Envelope -->
+  <div
+    class="envelope-wrapper"
+    [class.is-opening]="isOpening"
+    (click)="openInvite()"
+    role="button"
+    tabindex="0"
+    aria-label="Abrir convite de casamento de Clara e Marco"
+    (keydown.enter)="openInvite()"
+    (keydown.space)="openInvite()"
+  >
+
+    <div class="envelope">
+
+      <!-- z1: fundo creme -->
+      <div class="envelope__back"></div>
+
+      <!-- z2: cartão (fica escondido atrás das dobras) -->
+      <!-- <div class="envelope__card">
+        <img
+          class="envelope__card-frame"
+          src="assets/Elementos Clara e Marco-11.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="envelope__card-content">
+          <img
+            class="envelope__card-ornament"
+            src="assets/Elementos Clara e Marco-07.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <p class="envelope__card-script">Save the date</p>
+          <span class="envelope__card-divider"></span>
+          <p class="envelope__card-date">21 · novembro · 2026</p>
+        </div>
+      </div> -->
+
+      <!-- z3: dobras esquerda, direita e inferior (sempre cobrem o card) -->
+      <div class="envelope__flap-left"></div>
+      <div class="envelope__flap-right"></div>
+      <div class="envelope__flap-bottom"></div>
+
+      <!-- z4: dobra superior verde (abre ao clicar, backface hidden) -->
+      <div class="envelope__flap-top"></div>
+
+      <!-- z5: lacre — fora da flap para não ser recortado pelo clip-path -->
+      <div class="envelope__seal">
+        <img
+          src="assets/Elementos Clara e Marco-12.png"
+          alt="Monograma C&M"
+        />
+      </div>
+
+    </div><!-- /envelope -->
+
+    <!-- Dica interativa -->
+    <p class="landing-hint" [class.landing-hint--hidden]="isOpening" aria-hidden="true">
+      <span class="landing-hint__dot"></span>
+      toque para abrir
+    </p>
+
+  </div><!-- /envelope-wrapper -->
+
+</div><!-- /landing-scene -->

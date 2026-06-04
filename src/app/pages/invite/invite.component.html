@@ -1,0 +1,436 @@
+<main class="invite-page">
+
+  <!-- ─────────────── SEÇÃO 1 — Hero do convite ─────────────── -->
+  <section class="hero-section">
+
+    <!-- Decorações de borda -->
+    <img class="deco deco--tl" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
+    <img class="deco deco--tr" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
+    <img class="deco deco--bl" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
+    <img class="deco deco--br" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
+
+    <!-- Conteúdo central -->
+    <div class="hero-section__inner">
+
+      <!-- Monograma -->
+      <img
+        class="hero-section__monogram"
+        src="assets/Elementos Clara e Marco-12.png"
+        alt="Monograma Clara e Marco"
+      />
+
+      <!-- Título principal -->
+      <h1 class="hero-section__title">Marco Polo &amp; Clara</h1>
+
+      <!-- Divisor de folhas -->
+      <img
+        class="hero-section__divider"
+        src="assets/Elementos Clara e Marco-03.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- Linha de informações: data | sol | local -->
+      <div class="hero-section__info">
+
+        <div class="info-block info-block--left">
+          <span class="info-block__label">Data</span>
+          <p class="info-block__main">21 de novembro</p>
+          <p class="info-block__sub">2026</p>
+          <p class="info-block__detail">17h00</p>
+        </div>
+
+        <div class="info-block info-block--center">
+          <img
+            src="assets/Elementos Clara e Marco-02.png"
+            alt="Elemento decorativo solar"
+            class="info-block__sun"
+          />
+        </div>
+
+        <div class="info-block info-block--right">
+          <span class="info-block__label">Local</span>
+          <p class="info-block__main">Trancoso</p>
+          <p class="info-block__sub">Bahia</p>
+          <p class="info-block__detail">Brasil</p>
+        </div>
+
+      </div><!-- /hero-section__info -->
+
+    </div><!-- /hero-section__inner -->
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 2 — Mensagem dos noivos ─────────────── -->
+  <section class="message-section">
+
+    <!-- Moldura botânica esticada sobre toda a seção -->
+    <img
+      class="message-frame"
+      src="assets/Elementos Clara e Marco-11.png"
+      alt=""
+      aria-hidden="true"
+    />
+
+    <!-- Conteúdo central -->
+    <div class="message-card">
+      <p class="message-card__greeting">Queridos amigos<br /> e familiares,</p>
+
+      <p class="message-card__body">
+        Estamos muito felizes em compartilhar<br />
+        esse momento tão importante com vocês!
+      </p>
+
+      <p class="message-card__body">
+        Aqui vocês vão encontrar todas as<br />
+        informações sobre o nosso casamento.
+      </p>
+
+      <p class="message-card__body">
+        A presença de vocês é essencial<br />
+        pra nós. Tragam muuuita energia!
+      </p>
+
+      <p class="message-card__sign">
+        Com amor,<br />
+        <span>Clara &amp; Marco</span>
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 3 — Contagem regressiva ─────────────── -->
+  <section class="countdown-section">
+
+    <p class="countdown-section__title">Faltam</p>
+
+    <div class="countdown-section__row">
+
+      <!-- Golfista esquerdo -->
+      <img
+        class="countdown-golfer countdown-golfer--left"
+        src="assets/%E2%80%94Pngtree%E2%80%94golf%20player%20silhouette_7077471.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- Números -->
+      <div class="countdown-timer">
+        <div class="countdown-unit">
+          <span class="countdown-unit__number">{{ countdown.days }}</span>
+          <span class="countdown-unit__label">Dias</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-unit__number">{{ countdown.hours }}</span>
+          <span class="countdown-unit__label">Horas</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-unit__number">{{ countdown.minutes }}</span>
+          <span class="countdown-unit__label">Minutos</span>
+        </div>
+      </div>
+
+      <!-- Golfista direito (espelhado) -->
+      <img
+        class="countdown-golfer countdown-golfer--right"
+        src="assets/%E2%80%94Pngtree%E2%80%94golf%20player%20silhouette_7077471.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 4 — Detalhes do casamento ─────────────── -->
+  <section class="details-section">
+
+    <div class="details-card">
+
+      <!-- Elemento solar dourado -->
+      <img
+        class="details-card__star"
+        src="assets/Elementos Clara e Marco-02.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- Título script -->
+      <p class="details-card__script">Casamento</p>
+
+      <!-- Data e hora -->
+      <p class="details-card__date">21 de novembro de 2026</p>
+      <p class="details-card__time">17h00</p>
+
+      <div class="details-card__divider"></div>
+
+      <!-- Local -->
+      <h3 class="details-card__venue">Favoritto Golf</h3>
+      <p class="details-card__address">
+        Condomínio Terravista<br />
+        Trancoso &ndash; BA
+      </p>
+
+      <div class="details-card__divider"></div>
+
+      <!-- Recepção -->
+      <p class="details-card__reception">
+        Após a cerimônia, os noivos recebem os<br />
+        convidados no mesmo local
+      </p>
+
+      <div class="details-card__divider"></div>
+
+      <!-- Traje -->
+      <h3 class="details-card__dresscode">Traje Passeio Completo</h3>
+      <p class="details-card__address">
+        Para as mulheres, sugerimos saltos mais<br />
+        grossos &mdash; a cerimônia acontecerá no gramado.
+      </p>
+
+      <br />
+      <!-- Título script -->
+      <p class="details-card__script">Beach Day</p>
+
+      <!-- Data e hora -->
+      <p class="details-card__date">20 de novembro de 2026</p>
+      <p class="details-card__time">16h00</p>
+
+      <div class="details-card__divider"></div>
+
+      <!-- Local -->
+      <h3 class="details-card__venue">Zé Barbudo</h3>
+      <p class="details-card__address">
+        Praia dos Nativos, 35<br />
+        Trancoso &ndash; BA
+      </p>
+
+      <!-- <div class="details-card__divider"></div> -->
+
+      <!-- Recepção -->
+      <!-- <p class="details-card__reception">
+        Após a cerimônia, os noivos recebem os<br />
+        convidados no mesmo local
+      </p> -->
+
+      <div class="details-card__divider"></div>
+
+      <!-- Traje -->
+      <h3 class="details-card__dresscode">Traje ResortWear</h3>
+      <p class="details-card__address">
+        A festa será pé na areia. Para os homens, camisas de linho são uma ótima pedida.
+        Para mulheres, conjuntos leves e vestidos fluidos são super bem-vindos!
+      </p>
+
+      <br />
+
+      <!-- Elemento solar dourado -->
+      <img
+        class="details-card__star"
+        src="assets/Elementos Clara e Marco-02.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 5 — Como chegar ─────────────── -->
+  <section class="directions-section">
+
+    <!-- Conteúdo -->
+    <div class="directions-section__content">
+
+      <img
+        class="directions-section__car"
+        src="assets/%E2%80%94Pngtree%E2%80%94car%20wedding%20love_13128788.png"
+        alt="Carro de casamento"
+      />
+
+      <p class="directions-section__title">Como chegar</p>
+
+      <a
+        class="directions-section__btn"
+        href="https://www.google.com/maps/place/Favoritto+Golf/@-16.5465965,-39.0953969,17z/data=!4m6!3m5!1s0x7369b002e9d899b:0xf6b73bafb81383c4!8m2!3d-16.5465194!4d-39.0946351!16s%2Fg%2F11vpvyfjpj?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Clique aqui</a>
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 6 — Informações úteis ─────────────── -->
+  <section class="info-section">
+
+    <div class="info-card">
+
+      <p class="info-card__title">Dicas</p>
+
+      <button class="info-btn" routerLink="/dicas/maquiagem">
+        <span class="info-btn__icon-wrap">
+          <img class="info-btn__icon" src="assets/makeup-pouch.png" alt="" aria-hidden="true" />
+        </span>
+        <span class="info-btn__label">Maquiagem</span>
+      </button>
+
+      <button class="info-btn" routerLink="/dicas/culinaria">
+        <span class="info-btn__icon-wrap">
+          <img class="info-btn__icon" src="assets/food-and-restaurant.png" alt="" aria-hidden="true" />
+        </span>
+        <span class="info-btn__label">Culinária</span>
+      </button>
+
+      <button class="info-btn" routerLink="/dicas/o-que-fazer">
+        <span class="info-btn__icon-wrap">
+          <img class="info-btn__icon" src="assets/camera.png" alt="" aria-hidden="true" />
+        </span>
+        <span class="info-btn__label">O que fazer</span>
+      </button>
+
+      <button class="info-btn" routerLink="/dicas/hoteis">
+        <span class="info-btn__icon-wrap">
+          <img class="info-btn__icon" src="assets/hotel.png" alt="" aria-hidden="true" />
+        </span>
+        <span class="info-btn__label">Hotéis</span>
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 7 — Confirmação de presença ─────────────── -->
+  <section class="confirmation-section">
+
+    <div class="confirmation-card">
+
+      <!-- Elemento solar dourado -->
+      <img
+        class="confirmation-card__star"
+        src="assets/Elementos Clara e Marco-02.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- Título script -->
+      <p class="confirmation-card__script">Confirmação</p>
+
+      <div class="confirmation-card__divider"></div>
+
+      <a
+        class="confirmation-card__btn"
+        href="https://sites.icasei.com.br/claraemarcopolo/pages/37784239"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Confirmar presença</a>
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 8 — Lista de Presentes ─────────────── -->
+  <section class="gifts-section">
+
+    <div class="gifts-section__content">
+
+      <img
+        class="gifts-section__icon"
+        src="assets/flor.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <p class="gifts-section__title">Lista de Presentes</p>
+
+      <a
+        class="gifts-section__btn"
+        href="https://sites.icasei.com.br/claraemarcopolo/pages/37784297"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Ver lista</a>
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 9 — Deixe um recado ─────────────── -->
+  <section class="recado-section">
+
+    <div class="recado-card">
+
+      <img
+        class="recado-card__star"
+        src="assets/Elementos Clara e Marco-02.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <p class="recado-card__script">Recados</p>
+
+      <div class="recado-card__divider"></div>
+
+      <p class="details-card__reception">Deixe uma mensagem para os noivos</p>
+
+      <input
+        #nomeInput
+        class="recado-card__input"
+        type="text"
+        placeholder="Seu nome"
+        maxlength="80"
+      />
+
+      <textarea
+        #msgInput
+        class="recado-card__textarea"
+        placeholder="Escreva sua mensagem…"
+        maxlength="400"
+        rows="4"
+      ></textarea>
+
+      <button
+        class="recado-card__btn"
+        (click)="sendRecado(nomeInput.value, msgInput.value)"
+      >Enviar recado</button>
+
+    </div>
+
+  </section>
+
+  <!-- ─────────────── SEÇÃO 10 — Contato ─────────────── -->
+  <section class="contact-section">
+
+    <div class="contact-section__content">
+
+      <img
+        class="contact-section__monogram"
+        src="assets/Elementos Clara e Marco-12.png"
+        alt="Monograma Clara e Marco"
+        aria-hidden="true"
+      />
+
+      <p class="contact-section__title">Contato</p>
+
+      <div class="contact-section__divider"></div>
+
+      <div class="contact-section__list">
+
+        <div class="contact-item">
+          <span class="contact-item__name">Clara</span>
+          <a class="contact-item__link" href="https://wa.me/5527988333029" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-item__name">Marco Polo</span>
+          <a class="contact-item__link" href="https://wa.me/5527992225225" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
