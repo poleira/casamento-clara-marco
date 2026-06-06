@@ -86,17 +86,17 @@
 }
 
 .envelope__flap-left {
-  background-color: #DED5C0;
+  background-color: #d4d5c8;
   clip-path: polygon(0 0, 0 100%, 50% 50%);
 }
 
 .envelope__flap-right {
-  background-color: #E8DFC8;
+  background-color: #e2e3d8;
   clip-path: polygon(100% 0, 100% 100%, 50% 50%);
 }
 
 .envelope__flap-bottom {
-  background-color: #D4CAAD;
+  background-color: #c8c9bb;
   clip-path: polygon(0 100%, 100% 100%, 50% 50%);
 }
 

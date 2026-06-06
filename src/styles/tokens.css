@@ -8,23 +8,23 @@
   /* ── CORES ─────────────────────────────────────────────── */
 
   /* Fundos */
-  --color-cream:        #F5EFE0;   /* fundo principal — creme/marfim */
-  --color-cream-dark:   #E8DFC8;   /* fundo com profundidade — areia quente */
+  --color-cream:        #f1f2e8;   /* fundo principal — creme/marfim */
+  --color-cream-dark:   #e2e3d8;   /* fundo com profundidade — areia quente */
   --color-white:        #FFFFFF;
 
   /* Verde (folhas e ramos) */
-  --color-green-forest: #4A5C28;   /* verde escuro — monograma, títulos */
-  --color-green-olive:  #6B7A3A;   /* verde oliva — listras, folhas */
-  --color-green-sage:   #7A9060;   /* verde sálvia — folhas secundárias */
-  --color-green-light:  #9FB88A;   /* verde claro — destaques de folhas */
+  --color-green-forest: #4c5c27;   /* verde escuro — monograma, títulos */
+  --color-green-olive:  #818760;   /* verde médio — listras, folhas */
+  --color-green-sage:   #818760;   /* verde médio — folhas secundárias */
+  --color-green-light:  #a8ab87;   /* verde claro — destaques de folhas */
 
   /* Terracota (flores) */
   --color-terracotta:   #A85432;   /* terracota — flores principais */
   --color-terracotta-light: #C4784E; /* terracota mais suave */
 
   /* Dourado (sóis e detalhes) */
-  --color-gold:         #C9A84C;   /* dourado — elementos solares, pontos */
-  --color-gold-light:   #D4BC80;   /* dourado suave — contrastes */
+  --color-gold:         #b99d6d;   /* marrom claro/dourado — elementos solares, pontos */
+  --color-gold-light:   #cdb58c;   /* marrom claro suave — contrastes */
 
   /* Texto */
   --color-text-primary:   var(--color-green-forest);

@@ -327,8 +327,8 @@
 .countdown-golfer {
   width: clamp(80px, 12vw, 130px);
   height: auto;
-  /* Coloriza a silhueta preta → teal (aprox #4a7c8e) */
-  filter: invert(37%) sepia(20%) saturate(700%) hue-rotate(155deg) brightness(82%);
+  /* Coloriza a silhueta preta → ligeiramente acima de --color-green-forest */
+  filter: brightness(0) saturate(100%) invert(27%) sepia(25%) saturate(600%) hue-rotate(63deg) brightness(100%);
   mix-blend-mode: multiply;
   flex-shrink: 0;
 }
@@ -524,7 +524,7 @@
 
 .directions-section {
   position: relative;
-  background-color: #9aab88; /* sage mais suave — tom do exemplo */
+  background-color: var(--color-green-light); /* verde médio — novo token --color-green-sage */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -647,8 +647,8 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* coloriza preto → --color-green-forest (#4A5C28) */
-  filter: brightness(0) saturate(100%) invert(28%) sepia(20%) saturate(650%) hue-rotate(66deg) brightness(88%);
+  /* coloriza preto → --color-green-forest (#4c5c27) */
+  filter: brightness(0) saturate(100%) invert(27%) sepia(25%) saturate(600%) hue-rotate(63deg) brightness(85%);
 }
 
 .info-btn__label {
@@ -742,7 +742,7 @@
 
 .gifts-section {
   position: relative;
-  background-color: #9aab88;
+  background-color: var(--color-green-light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -898,7 +898,7 @@
 
 .contact-section {
   position: relative;
-  background-color: #9aab88;
+  background-color: var(--color-green-light);
   display: flex;
   flex-direction: column;
   align-items: center;
