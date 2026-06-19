@@ -64,13 +64,15 @@
   <!-- ─────────────── SEÇÃO 2 — Mensagem dos noivos ─────────────── -->
   <section class="message-section">
 
-    <!-- Moldura botânica esticada sobre toda a seção -->
-    <img
-      class="message-frame"
-      src="assets/Elementos Clara e Marco-11.png"
-      alt=""
-      aria-hidden="true"
-    />
+    <!-- Moldura botânica responsiva: mobile menor e desktop original -->
+    <picture class="message-frame" aria-hidden="true">
+      <source media="(min-width: 768px)" srcset="assets/fundo_carta.jpg" />
+      <img
+        class="message-frame__img"
+        src="assets/fundo_carta_menor.jpg"
+        alt=""
+      />
+    </picture>
 
     <!-- Conteúdo central -->
     <div class="message-card">
@@ -246,7 +248,7 @@
 
       <img
         class="directions-section__car"
-        src="assets/%E2%80%94Pngtree%E2%80%94car%20wedding%20love_13128788.png"
+        src="assets/carro.png"
         alt="Carro de casamento"
       />
 
@@ -272,14 +274,14 @@
 
       <button class="info-btn" routerLink="/dicas/maquiagem">
         <span class="info-btn__icon-wrap">
-          <img class="info-btn__icon" src="assets/makeup-pouch.png" alt="" aria-hidden="true" />
+          <img class="info-btn__icon" src="assets/maquiagem.png" alt="" aria-hidden="true" />
         </span>
         <span class="info-btn__label">Maquiagem</span>
       </button>
 
       <button class="info-btn" routerLink="/dicas/culinaria">
         <span class="info-btn__icon-wrap">
-          <img class="info-btn__icon" src="assets/food-and-restaurant.png" alt="" aria-hidden="true" />
+          <img class="info-btn__icon" src="assets/comida.png" alt="" aria-hidden="true" />
         </span>
         <span class="info-btn__label">Culinária</span>
       </button>
@@ -338,7 +340,7 @@
 
       <img
         class="gifts-section__icon"
-        src="assets/flor.png"
+        src="assets/presente.png"
         alt=""
         aria-hidden="true"
       />
