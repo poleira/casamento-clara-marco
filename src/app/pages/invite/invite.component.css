@@ -9,7 +9,7 @@
 
 /* Espaçamento entre seções — borda bege espessa */
 .invite-page > section + section:not(.info-section):not(.directions-section):not(.gifts-section):not(.contact-section) {
-  border-top: clamp(4rem, 8vw, 8rem) solid var(--color-cream);
+  /* border-top: clamp(4rem, 8vw, 8rem) solid var(--color-cream); */
 }
 
 @keyframes page-fade-in {
@@ -543,7 +543,7 @@
   height: 500px;
   padding: clamp(3rem, 8vw, 5.5rem) clamp(1.5rem, 6vw, 3rem);
   border-top: none;
-  margin-top: clamp(4rem, 8vw, 8rem);
+  margin-top: clamp(3rem, 6vw, 6rem);
 }
 
 .directions-section__content {
@@ -595,7 +595,7 @@
   background-size: 320px auto;
   background-repeat: repeat;
   padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 8vw, 6rem);
-  margin: clamp(8rem, 14vw, 14rem) clamp(0.2rem, 0.1vw, 0.2rem) 0;
+  margin: clamp(6.5rem, 12vw, 12rem) clamp(0.2rem, 0.1vw, 0.2rem) 0;
   border-top: 1.5px solid var(--color-green-forest);
   border-left: 1.5px solid var(--color-green-forest);
   border-right: 1.5px solid var(--color-green-forest);
@@ -687,7 +687,7 @@
 
 .confirmation-section {
   background-color: var(--color-cream);
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 3rem);
+  padding: clamp(5.5rem, 13vw, 11rem) clamp(1.5rem, 6vw, 3rem) 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -816,7 +816,7 @@
 
 .recado-section {
   background-color: var(--color-cream);
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 3rem);
+  padding: clamp(6.5rem, 14vw, 12rem) clamp(1.5rem, 6vw, 3rem) clamp(6.5rem, 14vw, 12rem);
   display: flex;
   align-items: center;
   justify-content: center;
