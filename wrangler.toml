@@ -1,0 +1,5 @@
+name = "casamento-convite"
+compatibility_date = "2026-06-25"
+
+[assets]
+directory = "dist/casamento-convite"
