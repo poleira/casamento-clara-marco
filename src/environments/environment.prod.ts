@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://bolao-hexa-api.azurewebsites.net/api'
+  apiUrl: 'https://bolao-back-qq2u.onrender.com/api'
 };
