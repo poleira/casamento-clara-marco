@@ -151,7 +151,7 @@
 
 .envelope__card-script {
   font-family: var(--font-script);
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-size: clamp(1.8rem, 4.4vw, 2.5rem);
   color: var(--color-green-forest);
   line-height: 1;
 }

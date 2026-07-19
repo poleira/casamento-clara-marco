@@ -19,6 +19,69 @@
 
 /* ── SEÇÃO HERO ──────────────────────────────────────── */
 
+/* Imagem mobile: visível apenas abaixo de 768px */
+.hero-section__mobile-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Áreas clicáveis sobre os botões desenhados na imagem do convite:
+   ocultas por padrão (desktop), exibidas apenas no mobile abaixo */
+.hero-section__hotspot {
+  display: none;
+}
+
+/* No mobile, esconde o layout desktop e exibe só a imagem */
+@media (max-width: 767px) {
+  .hero-section__mobile-img {
+    display: block;
+  }
+
+  .hero-section .deco,
+  .hero-section .hero-section__inner {
+    display: none;
+  }
+
+  /* Áreas clicáveis sobre os botões desenhados na imagem do convite */
+  .hero-section__hotspot {
+    display: block;
+    position: absolute;
+    top: 76.5%;
+    height: 4.2%;
+    width: 14%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .hero-section__hotspot--confirm {
+    left: 43.5%;
+  }
+
+  .hero-section__hotspot--directions {
+    left: 59%;
+  }
+
+  .hero-section__hotspot--gifts {
+    left: 28%;
+  }
+
+  .hero-section__hotspot:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+/* No desktop, esconde a imagem mobile e exibe o layout original */
+@media (min-width: 768px) {
+  .hero-section__mobile-img {
+    display: none;
+  }
+}
+
 .hero-section {
   position: relative;
   min-height: 100svh;
@@ -28,6 +91,14 @@
   background-color: var(--color-cream);
   overflow: hidden;
   padding: var(--space-16) var(--space-8);
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 0;
+    min-height: unset;
+    align-items: flex-start;
+  }
 }
 
 /* Decorações de borda */
@@ -103,8 +174,8 @@
 
 .hero-section__title {
   font-family: var(--font-script);
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
-  font-weight: var(--font-regular);
+  font-size: clamp(3.6rem, 10vw, 6.8rem);
+  font-weight: normal;
   color: var(--color-green-forest);
   line-height: var(--leading-tight);
   letter-spacing: 0.01em;
@@ -260,7 +331,7 @@
 .message-card__sign span {
   font-family: var(--font-script);
   font-style: normal;
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   color: var(--color-green-forest);
   display: block;
   margin-top: var(--space-1);
@@ -310,7 +381,7 @@
 
 .countdown-section {
   background-color: var(--color-cream);
-  padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 6vw, 4rem);
+  padding: clamp(5.5rem, 13vw, 9rem) clamp(2rem, 6vw, 4rem) clamp(3rem, 8vw, 5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,7 +390,7 @@
 
 .countdown-section__title {
   font-family: var(--font-script);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.5rem, 6.1vw, 3.8rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1;
@@ -431,7 +502,7 @@
 
 .details-card__script {
   font-family: var(--font-script);
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(2.5rem, 6.1vw, 3.6rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1.1;
@@ -562,7 +633,7 @@
 
 .directions-section__title {
   font-family: var(--font-script);
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-size: clamp(2.7rem, 7.1vw, 4rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1;
@@ -621,7 +692,7 @@
 .info-card__title {
   width: 100%;
   font-family: var(--font-script);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(2.2rem, 4.9vw, 3rem);
   color: var(--color-green-forest);
   text-align: center;
   line-height: 1;
@@ -715,7 +786,7 @@
 
 .confirmation-card__script {
   font-family: var(--font-script);
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(2.5rem, 6.1vw, 3.6rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1.1;
@@ -786,7 +857,7 @@
 
 .gifts-section__title {
   font-family: var(--font-script);
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-size: clamp(2.7rem, 7.1vw, 4rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1;
@@ -844,7 +915,7 @@
 
 .recado-card__script {
   font-family: var(--font-script);
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(2.5rem, 6.1vw, 3.6rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1.1;
@@ -940,7 +1011,7 @@
 
 .contact-section__title {
   font-family: var(--font-script);
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-size: clamp(2.7rem, 7.1vw, 4rem);
   color: var(--color-green-forest);
   margin: 0;
   line-height: 1;

@@ -67,7 +67,7 @@
 
 .hero__couple-name {
   font-family: var(--font-script);
-  font-size: clamp(3rem, 8vw, var(--text-5xl));
+  font-size: clamp(3.9rem, 10vw, var(--text-5xl));
   color: var(--color-green-forest);
   line-height: var(--leading-tight);
   margin-bottom: var(--space-4);

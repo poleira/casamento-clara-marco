@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { RecadoService } from '../../services/recado.service';
 
 @Component({
   selector: 'app-invite',
@@ -8,7 +9,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class InviteComponent implements OnInit, OnDestroy {
 
   countdown = { days: '00', hours: '00', minutes: '00' };
+  enviandoRecado = false;
   private countdownInterval: any;
+
+  constructor(private recadoService: RecadoService) { }
 
   ngOnInit(): void {
     this.updateCountdown();
@@ -44,12 +48,37 @@ export class InviteComponent implements OnInit, OnDestroy {
     alert(message);
   }
 
-  sendRecado(nome: string, mensagem: string): void {
-    if (!nome.trim() || !mensagem.trim()) {
+  scrollToSection(id: string): void {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  sendRecado(nome: string, mensagem: string, nomeInput?: HTMLInputElement, msgInput?: HTMLTextAreaElement): void {
+    const nomeTrim = nome.trim();
+    const mensagemTrim = mensagem.trim();
+
+    if (!nomeTrim || !mensagemTrim) {
       alert('Por favor, preencha seu nome e mensagem.');
       return;
     }
-    alert(`Recado recebido, ${nome.trim()}! Em breve esse recurso estará ativo.`);
+
+    if (this.enviandoRecado) {
+      return;
+    }
+
+    this.enviandoRecado = true;
+
+    this.recadoService.salvarRecado({ nome: nomeTrim, mensagem: mensagemTrim }).subscribe({
+      next: () => {
+        alert(`Obrigado, ${nomeTrim}! Seu recado foi enviado com sucesso.`);
+        if (nomeInput) nomeInput.value = '';
+        if (msgInput) msgInput.value = '';
+        this.enviandoRecado = false;
+      },
+      error: () => {
+        alert('Não foi possível enviar seu recado agora. Tente novamente em instantes.');
+        this.enviandoRecado = false;
+      }
+    });
   }
 
 }

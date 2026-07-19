@@ -3,6 +3,33 @@
   <!-- ─────────────── SEÇÃO 1 — Hero do convite ─────────────── -->
   <section class="hero-section">
 
+    <!-- Imagem de convite — exibida apenas em mobile -->
+    <img
+      class="hero-section__mobile-img"
+      src="assets/convite_tudo.png"
+      alt="Convite Clara e Marco Polo"
+    />
+
+    <!-- Áreas clicáveis sobre os botões desenhados na imagem (apenas mobile) -->
+    <button
+      type="button"
+      class="hero-section__hotspot hero-section__hotspot--confirm"
+      aria-label="Confirmar presença"
+      (click)="scrollToSection('confirmation-section')"
+    ></button>
+    <button
+      type="button"
+      class="hero-section__hotspot hero-section__hotspot--directions"
+      aria-label="Detalhes do casamento"
+      (click)="scrollToSection('details-section')"
+    ></button>
+    <button
+      type="button"
+      class="hero-section__hotspot hero-section__hotspot--gifts"
+      aria-label="Lista de presentes"
+      (click)="scrollToSection('gifts-section')"
+    ></button>
+
     <!-- Decorações de borda -->
     <img class="deco deco--tl" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
     <img class="deco deco--tr" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
@@ -61,44 +88,6 @@
 
   </section>
 
-  <!-- ─────────────── SEÇÃO 2 — Mensagem dos noivos ─────────────── -->
-  <!-- <section class="message-section">
-
-    <picture class="message-frame" aria-hidden="true">
-      <source media="(min-width: 768px)" srcset="assets/fundo_carta.jpg" />
-      <img
-        class="message-frame__img"
-        src="assets/fundo_carta_menor.jpg"
-        alt=""
-      />
-    </picture>
-
-    <div class="message-card">
-      <p class="message-card__greeting">Queridos amigos<br /> e familiares,</p>
-
-      <p class="message-card__body">
-        Estamos muito felizes em compartilhar<br />
-        esse momento tão importante com vocês!
-      </p>
-
-      <p class="message-card__body">
-        Aqui vocês vão encontrar todas as<br />
-        informações sobre o nosso casamento.
-      </p>
-
-      <p class="message-card__body">
-        A presença de vocês é essencial<br />
-        pra nós. Tragam muuuita energia!
-      </p>
-
-      <p class="message-card__sign">
-        Com amor,<br />
-        <span>Clara &amp; Marco</span>
-      </p>
-    </div>
-
-  </section> -->
-
   <!-- ─────────────── SEÇÃO 3 — Contagem regressiva ─────────────── -->
   <section class="countdown-section">
 
@@ -145,7 +134,7 @@
   </section>
 
   <!-- ─────────────── SEÇÃO 4 — Detalhes do casamento ─────────────── -->
-  <section class="details-section">
+  <section class="details-section" id="details-section">
 
     <div class="details-card">
 
@@ -158,7 +147,7 @@
       />
 
       <!-- Título script -->
-      <p class="details-card__script">Casamento</p>
+      <p class="details-card__script">Cerimônia</p>
 
       <!-- Data e hora -->
       <p class="details-card__date">21 de novembro de 2026</p>
@@ -239,7 +228,7 @@
   </section>
 
   <!-- ─────────────── SEÇÃO 5 — Como chegar ─────────────── -->
-  <section class="directions-section">
+  <section class="directions-section" id="directions-section">
 
     <!-- Conteúdo -->
     <div class="directions-section__content">
@@ -303,7 +292,7 @@
   </section>
 
   <!-- ─────────────── SEÇÃO 7 — Confirmação de presença ─────────────── -->
-  <section class="confirmation-section">
+  <section class="confirmation-section" id="confirmation-section">
 
     <div class="confirmation-card">
 
@@ -332,7 +321,7 @@
   </section>
 
   <!-- ─────────────── SEÇÃO 8 — Lista de Presentes ─────────────── -->
-  <section class="gifts-section">
+  <section class="gifts-section" id="gifts-section">
 
     <div class="gifts-section__content">
 
@@ -392,8 +381,9 @@
 
       <button
         class="recado-card__btn"
-        (click)="sendRecado(nomeInput.value, msgInput.value)"
-      >Enviar recado</button>
+        [disabled]="enviandoRecado"
+        (click)="sendRecado(nomeInput.value, msgInput.value, nomeInput, msgInput)"
+      >{{ enviandoRecado ? 'Enviando…' : 'Enviar recado' }}</button>
 
     </div>
 
