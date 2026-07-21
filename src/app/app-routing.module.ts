@@ -6,15 +6,17 @@ import { MaquiagemComponent } from './pages/dicas/maquiagem/maquiagem.component'
 import { CulinariaComponent } from './pages/dicas/culinaria/culinaria.component';
 import { OQueFazerComponent } from './pages/dicas/o-que-fazer/o-que-fazer.component';
 import { HoteisComponent } from './pages/dicas/hoteis/hoteis.component';
+import { ConfirmacaoComponent } from './pages/confirmacao/confirmacao.component';
 
 const routes: Routes = [
-  { path: '',                    component: LandingComponent   },
-  { path: 'convite',             component: InviteComponent    },
-  { path: 'dicas/maquiagem',     component: MaquiagemComponent },
-  { path: 'dicas/culinaria',     component: CulinariaComponent },
-  { path: 'dicas/o-que-fazer',   component: OQueFazerComponent },
-  { path: 'dicas/hoteis',        component: HoteisComponent    },
-  { path: '**',                  redirectTo: ''                }
+  { path: '',                    component: LandingComponent     },
+  { path: 'convite',             component: InviteComponent      },
+  { path: 'confirmacao',         component: ConfirmacaoComponent },
+  { path: 'dicas/maquiagem',     component: MaquiagemComponent   },
+  { path: 'dicas/culinaria',     component: CulinariaComponent   },
+  { path: 'dicas/o-que-fazer',   component: OQueFazerComponent   },
+  { path: 'dicas/hoteis',        component: HoteisComponent      },
+  { path: '**',                  redirectTo: ''                  }
 ];
 
 @NgModule({

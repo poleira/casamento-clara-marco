@@ -10,6 +10,7 @@ import { MaquiagemComponent } from './pages/dicas/maquiagem/maquiagem.component'
 import { CulinariaComponent } from './pages/dicas/culinaria/culinaria.component';
 import { OQueFazerComponent } from './pages/dicas/o-que-fazer/o-que-fazer.component';
 import { HoteisComponent } from './pages/dicas/hoteis/hoteis.component';
+import { ConfirmacaoComponent } from './pages/confirmacao/confirmacao.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HoteisComponent } from './pages/dicas/hoteis/hoteis.component';
     MaquiagemComponent,
     CulinariaComponent,
     OQueFazerComponent,
-    HoteisComponent
+    HoteisComponent,
+    ConfirmacaoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,106 @@
+<main class="tips-page">
+
+  <!-- Navegação -->
+  <nav class="tips-nav">
+    <a class="tips-nav__back" routerLink="/convite">&#8592; Voltar</a>
+    <img class="tips-nav__monogram" src="assets/Elementos Clara e Marco-12.png" alt="Monograma Clara e Marco" />
+  </nav>
+
+  <!-- Hero -->
+  <header class="tips-hero">
+    <img class="tips-hero__deco tips-hero__deco--tl" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
+    <img class="tips-hero__deco tips-hero__deco--tr" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
+    <div class="tips-hero__inner">
+      <p class="tips-hero__script">Confirmação</p>
+      <h1 class="tips-hero__title">Confirme sua Presença</h1>
+      <img class="tips-hero__divider" src="assets/Elementos Clara e Marco-03.png" alt="" aria-hidden="true" />
+      <p class="tips-hero__subtitle">Digite seu nome da forma como foi enviado no convite</p>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <section class="tips-content">
+
+    <div class="confirmacao-card">
+
+      <img
+        class="confirmacao-card__star"
+        src="assets/Elementos Clara e Marco-02.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <p class="confirmacao-card__script">Confirmação</p>
+
+      <div class="confirmacao-card__divider"></div>
+
+      <p class="confirmacao-card__subtitle">Digite seu nome da forma como foi enviado no convite.</p>
+
+      <input
+        #nomeInput
+        class="confirmacao-card__input"
+        type="text"
+        placeholder="Seu nome completo"
+        maxlength="120"
+        (keyup.enter)="buscarConvidado(nomeInput)"
+      />
+
+      <p class="confirmacao-card__erro" *ngIf="erroBusca">{{ erroBusca }}</p>
+
+      <button
+        class="confirmacao-card__btn"
+        [disabled]="buscando"
+        (click)="buscarConvidado(nomeInput)"
+      >{{ buscando ? 'Buscando…' : 'Buscar' }}</button>
+
+    </div>
+
+  </section>
+
+  <!-- Modal de confirmação -->
+  <div class="confirmacao-modal" *ngIf="modalAberto" (click)="fecharModal()">
+    <div class="confirmacao-modal__box" (click)="$event.stopPropagation()">
+
+      <button class="confirmacao-modal__close" (click)="fecharModal()" aria-label="Fechar">&times;</button>
+
+      <img
+        class="confirmacao-modal__star"
+        src="assets/Elementos Clara e Marco-02.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <ng-container *ngIf="etapa === 'busca'">
+
+        <p class="confirmacao-modal__nome">{{ nomeConvidado }}</p>
+
+        <p class="confirmacao-modal__texto" *ngIf="!jaConfirmado">Deseja confirmar sua presença no casamento?</p>
+        <p class="confirmacao-modal__texto" *ngIf="jaConfirmado">Sua presença já está confirmada. Estamos te esperando!</p>
+
+        <div class="confirmacao-modal__acoes" *ngIf="!jaConfirmado">
+          <button class="confirmacao-modal__btn confirmacao-modal__btn--secundario" (click)="fecharModal()">Cancelar</button>
+          <button
+            class="confirmacao-modal__btn"
+            [disabled]="confirmando"
+            (click)="confirmarPresenca()"
+          >{{ confirmando ? 'Confirmando…' : 'Confirmar' }}</button>
+        </div>
+
+        <div class="confirmacao-modal__acoes" *ngIf="jaConfirmado">
+          <button class="confirmacao-modal__btn" (click)="fecharModal()">Fechar</button>
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="etapa === 'confirmado'">
+        <p class="confirmacao-modal__nome">{{ nomeConvidado }}</p>
+        <p class="confirmacao-modal__texto">Presença confirmada com sucesso! Mal podemos esperar para celebrar com você.</p>
+        <div class="confirmacao-modal__acoes">
+          <button class="confirmacao-modal__btn" (click)="fecharModal()">Fechar</button>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+
+</main>

@@ -1,0 +1,201 @@
+/* Estilos específicos da página de Confirmação de Presença.
+   Os estilos compartilhados de layout estão em src/styles/tips-page.css */
+
+.confirmacao-card {
+  width: min(520px, 90vw);
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-text-secondary);
+  outline: 1px solid var(--color-text-secondary);
+  outline-offset: -8px;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+}
+
+.confirmacao-card__star {
+  width: clamp(36px, 6vw, 52px);
+  height: auto;
+  margin-bottom: var(--space-2);
+}
+
+.confirmacao-card__script {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 6.1vw, 3.6rem);
+  color: var(--color-green-forest);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.confirmacao-card__divider {
+  width: 60%;
+  height: 1px;
+  background-color: var(--color-text-muted);
+  opacity: 0.5;
+  margin: var(--space-2) 0;
+}
+
+.confirmacao-card__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.72rem, 1.4vw, 0.88rem);
+  color: var(--color-text-secondary);
+  margin: 0;
+  letter-spacing: var(--tracking-wide);
+}
+
+.confirmacao-card__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.5vw, 0.9rem);
+  color: var(--color-text-primary);
+  padding: 0.5rem 0.25rem;
+  outline: none;
+  text-align: center;
+  letter-spacing: var(--tracking-wide);
+}
+
+.confirmacao-card__input::placeholder {
+  color: var(--color-text-muted);
+  text-transform: none;
+}
+
+.confirmacao-card__erro {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.3vw, 0.8rem);
+  color: #a33b3b;
+  margin: 0;
+}
+
+.confirmacao-card__btn {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-green-forest);
+  border: 1.5px solid var(--color-green-forest);
+  background: transparent;
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: var(--space-2);
+}
+
+.confirmacao-card__btn:hover {
+  background: var(--color-green-forest);
+  color: var(--color-cream);
+}
+
+.confirmacao-card__btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ── MODAL ──────────────────────────────────────────────── */
+
+.confirmacao-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 32, 20, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  z-index: 1000;
+  animation: page-fade-in 0.2s ease both;
+}
+
+.confirmacao-modal__box {
+  position: relative;
+  width: min(440px, 92vw);
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-text-secondary);
+  outline: 1px solid var(--color-text-secondary);
+  outline-offset: -8px;
+  padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.75rem, 5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.confirmacao-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.confirmacao-modal__star {
+  width: clamp(30px, 5vw, 44px);
+  height: auto;
+}
+
+.confirmacao-modal__nome {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: var(--font-medium);
+  color: var(--color-green-forest);
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+}
+
+.confirmacao-modal__texto {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.6vw, 0.92rem);
+  line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.confirmacao-modal__acoes {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.confirmacao-modal__btn {
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.3vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1.5px solid var(--color-green-forest);
+  background: var(--color-green-forest);
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.confirmacao-modal__btn:hover {
+  opacity: 0.85;
+}
+
+.confirmacao-modal__btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.confirmacao-modal__btn--secundario {
+  color: var(--color-green-forest);
+  background: transparent;
+}
+
+.confirmacao-modal__btn--secundario:hover {
+  background: var(--color-green-forest);
+  color: var(--color-cream);
+  opacity: 1;
+}
