@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RecadoService } from '../../services/recado.service';
 
 @Component({
@@ -12,11 +13,17 @@ export class InviteComponent implements OnInit, OnDestroy {
   enviandoRecado = false;
   private countdownInterval: any;
 
-  constructor(private recadoService: RecadoService) { }
+  constructor(private recadoService: RecadoService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.updateCountdown();
     this.countdownInterval = setInterval(() => this.updateCountdown(), 1000);
+
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => this.scrollToSection(fragment), 0);
+      }
+    });
   }
 
   ngOnDestroy(): void {

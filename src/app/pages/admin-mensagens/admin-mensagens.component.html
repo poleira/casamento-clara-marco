@@ -1,0 +1,42 @@
+<main class="tips-page">
+
+  <!-- Navegação -->
+  <nav class="tips-nav">
+    <a class="tips-nav__back" routerLink="/convite">&#8592; Voltar</a>
+    <img class="tips-nav__monogram" src="assets/Elementos Clara e Marco-12.png" alt="Monograma Clara e Marco" />
+  </nav>
+
+  <!-- Hero -->
+  <header class="tips-hero">
+    <img class="tips-hero__deco tips-hero__deco--tl" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
+    <img class="tips-hero__deco tips-hero__deco--tr" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
+    <div class="tips-hero__inner">
+      <p class="tips-hero__script">Convidados</p>
+      <h1 class="tips-hero__title">Mensagens de Convite</h1>
+      <img class="tips-hero__divider" src="assets/Elementos Clara e Marco-03.png" alt="" aria-hidden="true" />
+      <p class="tips-hero__subtitle">Copie a mensagem pronta de cada convidado para enviar</p>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <section class="tips-content">
+
+    <p class="admin-mensagens__estado" *ngIf="carregando">Carregando mensagens…</p>
+    <p class="admin-mensagens__estado admin-mensagens__estado--erro" *ngIf="erro">{{ erro }}</p>
+    <p class="admin-mensagens__estado" *ngIf="!carregando && !erro && mensagens.length === 0">Nenhum convidado cadastrado ainda.</p>
+
+    <div class="admin-mensagens__card" *ngFor="let item of mensagens; let i = index">
+
+      <p class="admin-mensagens__nome">{{ item.nome }}</p>
+
+      <pre class="admin-mensagens__texto">{{ item.mensagem }}</pre>
+
+      <button class="admin-mensagens__btn" (click)="copiar(item.mensagem, i)">
+        {{ copiadoIndex === i ? 'Copiado!' : 'Copiar mensagem' }}
+      </button>
+
+    </div>
+
+  </section>
+
+</main>

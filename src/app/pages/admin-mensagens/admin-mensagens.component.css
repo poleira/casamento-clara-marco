@@ -1,0 +1,65 @@
+/* Estilos específicos da página de Mensagens de Convite (admin).
+   Os estilos compartilhados de layout estão em src/styles/tips-page.css */
+
+.admin-mensagens__estado {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.6vw, 0.92rem);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.admin-mensagens__estado--erro {
+  color: #a33b3b;
+}
+
+.admin-mensagens__card {
+  width: min(560px, 90vw);
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-text-secondary);
+  outline: 1px solid var(--color-text-secondary);
+  outline-offset: -7px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.admin-mensagens__nome {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: var(--font-medium);
+  color: var(--color-green-forest);
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+}
+
+.admin-mensagens__texto {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.4vw, 0.88rem);
+  line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  background: transparent;
+}
+
+.admin-mensagens__btn {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.3vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-green-forest);
+  border: 1.5px solid var(--color-green-forest);
+  background: transparent;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-mensagens__btn:hover {
+  background: var(--color-green-forest);
+  color: var(--color-cream);
+}

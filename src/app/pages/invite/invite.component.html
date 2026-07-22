@@ -6,11 +6,18 @@
     <!-- Imagem de convite — exibida apenas em mobile -->
     <img
       class="hero-section__mobile-img"
-      src="assets/convite_tudo.png"
+      src="assets/convite_tudo.jpg"
       alt="Convite Clara e Marco Polo"
     />
 
-    <!-- Áreas clicáveis sobre os botões desenhados na imagem (apenas mobile) -->
+    <!-- Imagem de convite — exibida apenas em desktop -->
+    <img
+      class="hero-section__desktop-img"
+      src="assets/casamento_home_desktop.jpg"
+      alt="Convite Clara e Marco Polo"
+    />
+
+    <!-- Áreas clicáveis sobre os botões desenhados na imagem (mobile e desktop) -->
     <button
       type="button"
       class="hero-section__hotspot hero-section__hotspot--confirm"
@@ -30,62 +37,6 @@
       (click)="scrollToSection('gifts-section')"
     ></button>
 
-    <!-- Decorações de borda -->
-    <img class="deco deco--tl" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
-    <img class="deco deco--tr" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
-    <img class="deco deco--bl" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
-    <img class="deco deco--br" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
-
-    <!-- Conteúdo central -->
-    <div class="hero-section__inner">
-
-      <!-- Monograma -->
-      <img
-        class="hero-section__monogram"
-        src="assets/Elementos Clara e Marco-12.png"
-        alt="Monograma Clara e Marco"
-      />
-
-      <!-- Título principal -->
-      <h1 class="hero-section__title">Marco Polo &amp; Clara</h1>
-
-      <!-- Divisor de folhas -->
-      <img
-        class="hero-section__divider"
-        src="assets/Elementos Clara e Marco-03.png"
-        alt=""
-        aria-hidden="true"
-      />
-
-      <!-- Linha de informações: data | sol | local -->
-      <div class="hero-section__info">
-
-        <div class="info-block info-block--left">
-          <span class="info-block__label">Data</span>
-          <p class="info-block__main">21 de novembro</p>
-          <p class="info-block__sub">2026</p>
-          <p class="info-block__detail">17h00</p>
-        </div>
-
-        <div class="info-block info-block--center">
-          <img
-            src="assets/Elementos Clara e Marco-02.png"
-            alt="Elemento decorativo solar"
-            class="info-block__sun"
-          />
-        </div>
-
-        <div class="info-block info-block--right">
-          <span class="info-block__label">Local</span>
-          <p class="info-block__main">Trancoso</p>
-          <p class="info-block__sub">Bahia</p>
-          <p class="info-block__detail">Brasil</p>
-        </div>
-
-      </div><!-- /hero-section__info -->
-
-    </div><!-- /hero-section__inner -->
-
   </section>
 
   <!-- ─────────────── SEÇÃO 3 — Contagem regressiva ─────────────── -->
@@ -96,12 +47,12 @@
     <div class="countdown-section__row">
 
       <!-- Golfista esquerdo -->
-      <img
+      <!-- <img
         class="countdown-golfer countdown-golfer--left"
         src="assets/%E2%80%94Pngtree%E2%80%94golf%20player%20silhouette_7077471.png"
         alt=""
         aria-hidden="true"
-      />
+      /> -->
 
       <!-- Números -->
       <div class="countdown-timer">
@@ -122,12 +73,12 @@
       </div>
 
       <!-- Golfista direito (espelhado) -->
-      <img
+      <!-- <img
         class="countdown-golfer countdown-golfer--right"
         src="assets/%E2%80%94Pngtree%E2%80%94golf%20player%20silhouette_7077471.png"
         alt=""
         aria-hidden="true"
-      />
+      /> -->
 
     </div>
 
@@ -233,27 +184,31 @@
     <!-- Conteúdo -->
     <div class="directions-section__content">
 
-      <img
-        class="directions-section__car"
-        src="assets/carro.png"
-        alt="Carro de casamento"
-      />
-
       <p class="directions-section__title">Como chegar</p>
 
-      <a
-        class="directions-section__btn"
-        href="https://www.google.com/maps/place/Favoritto+Golf/@-16.5465965,-39.0953969,17z/data=!4m6!3m5!1s0x7369b002e9d899b:0xf6b73bafb81383c4!8m2!3d-16.5465194!4d-39.0946351!16s%2Fg%2F11vpvyfjpj?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Clique aqui</a>
+      <div class="directions-section__map-wrap">
+        <iframe
+          class="directions-section__map-frame"
+          src="https://www.google.com/maps?q=Favoritto+Golf,+Trancoso,+BA&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa com a localização do Favoritto Golf"
+        ></iframe>
+        <a
+          class="directions-section__map-overlay"
+          href="https://www.google.com/maps/place/Favoritto+Golf/@-16.5465965,-39.0953969,17z/data=!4m6!3m5!1s0x7369b002e9d899b:0xf6b73bafb81383c4!8m2!3d-16.5465194!4d-39.0946351!16s%2Fg%2F11vpvyfjpj?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir localização no Google Maps"
+        ></a>
+      </div>
 
     </div>
 
   </section>
 
   <!-- ─────────────── SEÇÃO 6 — Informações úteis ─────────────── -->
-  <section class="info-section">
+  <section class="info-section" id="info-section">
 
     <div class="info-card">
 
@@ -263,14 +218,14 @@
         <span class="info-btn__icon-wrap">
           <img class="info-btn__icon" src="assets/maquiagem.png" alt="" aria-hidden="true" />
         </span>
-        <span class="info-btn__label">Maquiagem</span>
+        <span class="info-btn__label">Maquiadores</span>
       </button>
 
       <button class="info-btn" routerLink="/dicas/culinaria">
         <span class="info-btn__icon-wrap">
           <img class="info-btn__icon" src="assets/comida.png" alt="" aria-hidden="true" />
         </span>
-        <span class="info-btn__label">Culinária</span>
+        <span class="info-btn__label">Restaurantes</span>
       </button>
 
       <button class="info-btn" routerLink="/dicas/o-que-fazer">

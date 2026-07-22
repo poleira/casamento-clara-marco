@@ -7,6 +7,7 @@ import { CulinariaComponent } from './pages/dicas/culinaria/culinaria.component'
 import { OQueFazerComponent } from './pages/dicas/o-que-fazer/o-que-fazer.component';
 import { HoteisComponent } from './pages/dicas/hoteis/hoteis.component';
 import { ConfirmacaoComponent } from './pages/confirmacao/confirmacao.component';
+import { AdminMensagensComponent } from './pages/admin-mensagens/admin-mensagens.component';
 
 const routes: Routes = [
   { path: '',                    component: LandingComponent     },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'dicas/culinaria',     component: CulinariaComponent   },
   { path: 'dicas/o-que-fazer',   component: OQueFazerComponent   },
   { path: 'dicas/hoteis',        component: HoteisComponent      },
+  { path: 'admin/mensagens',     component: AdminMensagensComponent },
   { path: '**',                  redirectTo: ''                  }
 ];
 

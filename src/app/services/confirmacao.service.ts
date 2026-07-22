@@ -14,6 +14,11 @@ export interface ConfirmarPresencaResponse {
   dataConfirmacao: string | null;
 }
 
+export interface MensagemConviteResponse {
+  nome: string;
+  mensagem: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +34,10 @@ export class ConfirmacaoService {
 
   confirmarPresenca(nome: string): Observable<ConfirmarPresencaResponse> {
     return this.http.post<ConfirmarPresencaResponse>(`${this.apiUrl}/confirmacao/confirmar`, { nome });
+  }
+
+  listarMensagensConvite(): Observable<MensagemConviteResponse[]> {
+    return this.http.get<MensagemConviteResponse[]>(`${this.apiUrl}/convidados/mensagens-convite`);
   }
 
 }
