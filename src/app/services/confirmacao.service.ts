@@ -19,6 +19,13 @@ export interface MensagemConviteResponse {
   mensagem: string;
 }
 
+export interface ConvidadoListagemResponse {
+  id: number;
+  nome: string;
+  confirmado: boolean;
+  dataConfirmacao: string | null;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,6 +45,22 @@ export class ConfirmacaoService {
 
   listarMensagensConvite(): Observable<MensagemConviteResponse[]> {
     return this.http.get<MensagemConviteResponse[]>(`${this.apiUrl}/convidados/mensagens-convite`);
+  }
+
+  listarConvidados(): Observable<ConvidadoListagemResponse[]> {
+    return this.http.get<ConvidadoListagemResponse[]>(`${this.apiUrl}/convidados`);
+  }
+
+  criarConvidado(nome: string): Observable<ConvidadoListagemResponse> {
+    return this.http.post<ConvidadoListagemResponse>(`${this.apiUrl}/convidados`, { nome });
+  }
+
+  atualizarConvidado(id: number, nome: string, confirmado: boolean): Observable<ConvidadoListagemResponse> {
+    return this.http.put<ConvidadoListagemResponse>(`${this.apiUrl}/convidados/${id}`, { nome, confirmado });
+  }
+
+  deletarConvidado(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/convidados/${id}`);
   }
 
 }

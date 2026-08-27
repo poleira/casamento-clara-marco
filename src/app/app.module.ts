@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { OQueFazerComponent } from './pages/dicas/o-que-fazer/o-que-fazer.compon
 import { HoteisComponent } from './pages/dicas/hoteis/hoteis.component';
 import { ConfirmacaoComponent } from './pages/confirmacao/confirmacao.component';
 import { AdminMensagensComponent } from './pages/admin-mensagens/admin-mensagens.component';
+import { AdminConvidadosComponent } from './pages/admin-convidados/admin-convidados.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { AdminMensagensComponent } from './pages/admin-mensagens/admin-mensagens
     OQueFazerComponent,
     HoteisComponent,
     ConfirmacaoComponent,
-    AdminMensagensComponent
+    AdminMensagensComponent,
+    AdminConvidadosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { OQueFazerComponent } from './pages/dicas/o-que-fazer/o-que-fazer.compon
 import { HoteisComponent } from './pages/dicas/hoteis/hoteis.component';
 import { ConfirmacaoComponent } from './pages/confirmacao/confirmacao.component';
 import { AdminMensagensComponent } from './pages/admin-mensagens/admin-mensagens.component';
+import { AdminConvidadosComponent } from './pages/admin-convidados/admin-convidados.component';
 
 const routes: Routes = [
   { path: '',                    component: LandingComponent     },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'dicas/o-que-fazer',   component: OQueFazerComponent   },
   { path: 'dicas/hoteis',        component: HoteisComponent      },
   { path: 'admin/mensagens',     component: AdminMensagensComponent },
+  { path: 'admin/convidados',    component: AdminConvidadosComponent },
   { path: '**',                  redirectTo: ''                  }
 ];
 

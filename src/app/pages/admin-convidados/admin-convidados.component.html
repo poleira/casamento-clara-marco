@@ -1,0 +1,152 @@
+<main class="tips-page">
+
+  <!-- Navegação -->
+  <nav class="tips-nav">
+    <a class="tips-nav__back" routerLink="/convite">&#8592; Voltar</a>
+    <img class="tips-nav__monogram" src="assets/Elementos Clara e Marco-12.png" alt="Monograma Clara e Marco" />
+  </nav>
+
+  <!-- Hero -->
+  <header class="tips-hero">
+    <img class="tips-hero__deco tips-hero__deco--tl" src="assets/Elementos Clara e Marco-05.png" alt="" aria-hidden="true" />
+    <img class="tips-hero__deco tips-hero__deco--tr" src="assets/Elementos Clara e Marco-04.png" alt="" aria-hidden="true" />
+    <div class="tips-hero__inner">
+      <p class="tips-hero__script">Admin</p>
+      <h1 class="tips-hero__title">Lista de Convidados</h1>
+      <img class="tips-hero__divider" src="assets/Elementos Clara e Marco-03.png" alt="" aria-hidden="true" />
+      <p class="tips-hero__subtitle">Gerencie os convidados do casamento</p>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <section class="tips-content">
+
+    <!-- Estado de carregamento / erro -->
+    <p class="ac__estado" *ngIf="carregando">Carregando convidados…</p>
+    <p class="ac__estado ac__estado--erro" *ngIf="erro">{{ erro }}</p>
+
+    <!-- Barra de ações + contadores -->
+    <div class="ac__toolbar" *ngIf="!carregando && !erro">
+      <div class="ac__counters">
+        <span class="ac__counter">Total: <strong>{{ convidados.length }}</strong></span>
+        <span class="ac__counter ac__counter--confirmado">Confirmados: <strong>{{ totalConfirmados }}</strong></span>
+        <span class="ac__counter ac__counter--pendente">Pendentes: <strong>{{ convidados.length - totalConfirmados }}</strong></span>
+      </div>
+      <div class="ac__toolbar-acoes">
+        <button class="ac__btn ac__btn--ghost" (click)="alternarOrdenacao()">
+          {{ ordenacao === 'id' ? 'Ordenar por nome' : 'Ordenar por ID' }}
+        </button>
+        <button class="ac__btn ac__btn--primary" (click)="abrirFormAdicionar()" [disabled]="mostrarFormAdicionar">
+          + Adicionar convidado
+        </button>
+      </div>
+    </div>
+
+    <!-- Formulário de adicionar -->
+    <div class="ac__form-adicionar" *ngIf="mostrarFormAdicionar">
+      <p class="ac__form-titulo">Novo convidado</p>
+      <div class="ac__form-linha">
+        <input
+          class="ac__input"
+          type="text"
+          placeholder="Nome completo"
+          [(ngModel)]="novoNome"
+          (keyup.enter)="confirmarAdicionar()"
+          [disabled]="adicionando"
+          autofocus
+        />
+        <button class="ac__btn ac__btn--primary" (click)="confirmarAdicionar()" [disabled]="adicionando">
+          {{ adicionando ? 'Salvando…' : 'Salvar' }}
+        </button>
+        <button class="ac__btn ac__btn--ghost" (click)="cancelarAdicionar()" [disabled]="adicionando">
+          Cancelar
+        </button>
+      </div>
+      <p class="ac__erro-inline" *ngIf="erroAdicionar">{{ erroAdicionar }}</p>
+    </div>
+
+    <!-- Tabela -->
+    <div class="ac__table-wrapper" *ngIf="!carregando && !erro">
+
+      <p class="ac__estado" *ngIf="convidados.length === 0">Nenhum convidado cadastrado ainda.</p>
+
+      <table class="ac__table" *ngIf="convidados.length > 0">
+        <thead>
+          <tr>
+            <th class="ac__th">Nome</th>
+            <th class="ac__th ac__th--center">Confirmado</th>
+            <th class="ac__th">Data confirmação</th>
+            <th class="ac__th ac__th--actions">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ac__tr" *ngFor="let c of convidadosOrdenados">
+
+            <!-- Linha normal -->
+            <ng-container *ngIf="editandoId !== c.id">
+              <td class="ac__td ac__td--nome">{{ c.nome }}</td>
+              <td class="ac__td ac__td--center">
+                <span class="ac__badge" [class.ac__badge--sim]="c.confirmado" [class.ac__badge--nao]="!c.confirmado">
+                  {{ c.confirmado ? 'Sim' : 'Não' }}
+                </span>
+              </td>
+              <td class="ac__td ac__td--data">
+                {{ c.dataConfirmacao ? (c.dataConfirmacao | date:'dd/MM/yyyy HH:mm':'UTC') : '—' }}
+              </td>
+              <td class="ac__td ac__td--actions">
+                <button class="ac__btn-icon ac__btn-icon--edit" (click)="iniciarEdicao(c)" title="Editar">✏️</button>
+                <button class="ac__btn-icon ac__btn-icon--delete" (click)="abrirModalDeletar(c)" title="Remover">🗑️</button>
+              </td>
+            </ng-container>
+
+            <!-- Linha em modo edição -->
+            <ng-container *ngIf="editandoId === c.id">
+              <td class="ac__td" colspan="4">
+                <div class="ac__edit-row">
+                  <input
+                    class="ac__input ac__input--edit"
+                    type="text"
+                    [(ngModel)]="editNome"
+                    [disabled]="salvando"
+                  />
+                  <label class="ac__checkbox-label">
+                    <input type="checkbox" [(ngModel)]="editConfirmado" [disabled]="salvando" />
+                    Confirmado
+                  </label>
+                  <button class="ac__btn ac__btn--primary ac__btn--sm" (click)="salvarEdicao()" [disabled]="salvando">
+                    {{ salvando ? 'Salvando…' : 'Salvar' }}
+                  </button>
+                  <button class="ac__btn ac__btn--ghost ac__btn--sm" (click)="cancelarEdicao()" [disabled]="salvando">
+                    Cancelar
+                  </button>
+                  <span class="ac__erro-inline" *ngIf="erroEditar">{{ erroEditar }}</span>
+                </div>
+              </td>
+            </ng-container>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Modal de confirmação de exclusão -->
+<div class="ac__modal-overlay" *ngIf="convidadoParaDeletar" (click)="cancelarDeletar()">
+  <div class="ac__modal" (click)="$event.stopPropagation()">
+    <p class="ac__modal-titulo">Remover convidado</p>
+    <p class="ac__modal-texto">
+      Tem certeza que deseja remover <strong>{{ convidadoParaDeletar?.nome }}</strong>?<br>
+      Esta ação não pode ser desfeita.
+    </p>
+    <p class="ac__erro-inline" *ngIf="erroDeletar">{{ erroDeletar }}</p>
+    <div class="ac__modal-acoes">
+      <button class="ac__btn ac__btn--ghost" (click)="cancelarDeletar()" [disabled]="deletando">Cancelar</button>
+      <button class="ac__btn ac__btn--danger" (click)="confirmarDeletar()" [disabled]="deletando">
+        {{ deletando ? 'Removendo…' : 'Remover' }}
+      </button>
+    </div>
+  </div>
+</div>
